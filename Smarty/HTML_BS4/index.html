@@ -1385,7 +1385,7 @@
 											</div>
 											<div class="col-md-4">
 												<label for="contact:name">Business Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:business name">
+												<input required type="text" value="" class="form-control" name="contact[business name][required]" id="contact:business name">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:email">E-mail Address *</label>
@@ -1395,11 +1395,13 @@
 												<label for="contact:phone">Phone</label>
 												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
 											</div>
-									</div>
-									<div class="row">
 											<div class="col-md-8">
-												<label for="contact:subject">Subject *</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+												<label for="contact:subject">Projet Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[projet name][required]" id="contact:project name">
+											</div>
+											<div class="col-md-8">
+												<label for="contact:subject">Projet Description *</label>
+												<input required type="text" value="" class="form-control" name="contact[projet description][required]" id="contact:project description">
 											</div>
 											<div class="col-md-4">
 												<label for="contact_department">Department</label>
@@ -1461,7 +1463,9 @@
 								h-550
 								h-600
 							-->
-							<div id="map2" class="h-400 grayscale"></div>
+							<div id="map2" class="h-400">
+								<div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=418-725%20Boulevard%20Lebourgneuf,%20Qu%C3%A9bec,%20QC%20G2J%200C4,%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+							</div>
 
 							<hr />
 
@@ -1588,25 +1592,7 @@
 		<script src="assets/plugins/gmaps.js"></script>
 		<script>
 
-			jQuery(document).ready(function(){
-
-				/**
-					@BASIC GOOGLE MAP
-				**/
-				var map2 = new GMaps({
-					div: '#map2',
-					lat: -12.043333,
-					lng: -77.028333,
-					scrollwheel: false
-				});
-
-				var marker = map2.addMarker({
-					lat: -12.043333,
-					lng: -77.028333,
-					title: 'Company, Inc.'
-				});
-
-			});
+			
 
 		</script>
 	</body>
