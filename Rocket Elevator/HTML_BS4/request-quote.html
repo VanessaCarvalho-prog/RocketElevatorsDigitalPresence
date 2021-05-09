@@ -27,6 +27,9 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+	
+		<link href="assets/css/rocket.css" rel="stylesheet" type="text/css" />
+	
 	</head>
 
 	<!--
@@ -186,117 +189,211 @@
 
 							<h3>Send us your project and we will contact you! <strong><em></em></strong></h3>
 
-							<div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                  Default radio
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                  Default checked radio
-                                </label>
-                              </div>
 							
+							<select class="form-select" aria-label="Default select example" id="options">
+								<option checked value="1">Residential</option>
+								<option value="2">Commercial</option>
+								<option value="3">Corporate</option>
+								<option value="4">Hybrid</option>
+							  </select>
+						</div>
+					</div>
 
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> Your message successfully sent!
-							</div><!-- /Alert Success -->
-
-
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-
-
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
-
-
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
-								<fieldset>
-									<input type="hidden" name="action" value="contact_send" />
-
-									<div class="row">
-											<div class="col-md-4">
-												<label for="contact:name">Full Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+					<hr />
+					
+					
+					<form action="php/contact.php" method="post" enctype="multipart/form-data">
+						<fieldset>
+							<div class="row align-items-center" id="form-residential">
+								<div class="col">
+									<div class="card card-success">
+										<div class="card-heading">
+											<h2 class="form-title">Residential</h2>
+										</div>
+										<div class="card-block">
+											<div class="row">
+												<div class="col-md-4" id="residential-app">
+													<label for="contact:name">Apartments in the building</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+												</div>
+												<div class="col-md-4" id="residential-floor">
+													<label for="contact:name">Floors contained in the building</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+												</div>
+												<div class="col-md-4" id="residential-bas">
+													<label for="contact:phone">Basements contained in the building</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[phone]">
+												</div>
 											</div>
-											<div class="col-md-4">
-												<label for="contact:name">Business Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[business name][required]" id="contact:business name">
-											</div>
-											<div class="col-md-4">
-												<label for="contact:phone">Phone</label>
-												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-md-4">
-												<label for="contact:subject">Projet Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[projet name][required]" id="contact:project name">
-											</div>
-											<div class="col-md-8">
-												<label for="contact:subject">Projet Description *</label>
-												<input required type="text" value="" class="form-control" name="contact[projet description][required]" id="contact:project description">
-											</div>	
-									</div>
-									<div class="row">
-											<div class="col-md-8">
-												<label for="contact:email">E-mail Address *</label>
-												<input required type="email" value="" class="form-control" name="contact[email][required]" id="contact:email">
-											</div>
-											<div class="col-md-4">
-												<label for="contact_department">Department</label>
-												<select class="form-control pointer" name="contact[department]">
-													<option value="">--- Select ---</option>
-													<option value="Residential">Residential</option>
-													<option value="Commercial">Commercial</option>
-													<option value="Corporate">Corporate</option>
-													<option value="Hybrid">Hybrid</option>
-												</select>
-											</div>
-									</div>
-									<div class="row">		
-											<div class="col-md-12">
-										<label for="contact:message">Message *</label>
-										<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
-									       </div>	
-									</div>									
-									<div class="row">
-											<div class="col-md-12">
-												<label for="contact:attachment">File Attachment</label>
-
-												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
-												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-
-											</div>
-									</div>
-
-								</fieldset>
-
-								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+										</div>
 									</div>
 								</div>
-							</form>
+							</div>
 
-						</div>
-						<!-- /FORM -->
+							<div class="row align-items-center" style="display:none" id="form-commercial">
+								<div class="col">
+									<div class="card card-success">
+										<div class="card-heading">
+											<h2 class="form-title">Commercial</h2>
+										</div>
+										<div class="card-block">
+											<div class="row">
+												<div class="col-md-4" id="commercial-dist">
+													<label for="contact:name">Distinct businesses</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+												</div>
+												<div class="col-md-4" id="commercial-floors">
+													<label for="contact:name">Floors contained in the building</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+												</div>
+												<div class="col-md-4" id="commercial-bas">
+													<label for="contact:phone">Basements contained in the building</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[phone]">
+												</div>
+												<div class="col-md-4" id="commercial-park">
+													<label for="contact:name">Parking space available</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name]">
+												</div>
+												<div class="col-md-4" id="commercial-elev">
+													<label for="contact:name">Elevator cages to be deployed</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name]">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
+							<div class="row align-items-center" style="display:none" id="form-corporate">
+								<div class="col">
+									<div class="card card-success">
+										<div class="card-heading">
+											<h2 class="form-title">Corporate</h2>
+										</div>
+										<div class="card-block">
+											<div class="row">
+												<div class="col-md-4" id="corporate-sep">
+													<label for="contact:name">Separate tenant companies
+													</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+												</div>
+												<div class="col-md-4" id="corporate-floors">
+													<label for="contact:name">Floors contained in the building</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[business name]">
+												</div>
+												<div class="col-md-4" id="corporate-bas">
+													<label for="contact:phone">Basements contained in the building</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[phone]">
+												</div>
+												<div class="col-md-4" id="corporate-park">
+													<label for="contact:name">Parking spaces available</label>
+													<input  type="number" min="0" value="0" class="form-control" name="contact[business name]">
+												</div>
+												<div class="col-md-4" id="corporate-occ">
+													<label for="contact:name">The maximum number of occupants per floor</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[business name]">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row align-items-center" style="display:none" id="form-hybrid">
+								<div class="col">
+									<div class="card card-success">
+										<div class="card-heading">
+											<h2 class="form-title">Hybrid</h2>
+										</div>
+										<div class="card-block">
+											<div class="row">
+												<div class="col-md-4" id="hybrid-dist">
+													<label for="contact:name">Distinct businesses</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+												</div>
+												<div class="col-md-4" id="hybrid-floors">
+													<label for="contact:name">floors contained in the building, excluding basements</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+												</div>
+												<div class="col-md-4" id="hybrid-bas">
+													<label for="contact:phone">basements contained in the building</label>
+													<input type="number" min="0" value="0" class="form-control" name="contact[phone]" id="contact:phone">
+												</div>
+												<div class="col-md-4" id="hybrid-park">
+													<label for="contact:name"> Parking spaces available</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+												</div>
+												<div class="col-md-4"  id="hybrid-max">
+													<label for="contact:name">Maximum number of occupants per floor</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+												</div>
+												<div class="col-md-4" id="hybrid-number">
+													<label for="contact:name">Number of hours of activity of the building</label>
+													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr />
+							
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioPlan" id="inlineRadio1" value="1">
+								<label class="form-check-label" for="inlineRadio1">Standard</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioPlan" id="inlineRadio2" value="2">
+								<label class="form-check-label" for="inlineRadio2">Premium</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioPlan" id="inlineRadio3" value="3">
+								<label class="form-check-label" for="inlineRadio3">Excelium</label>
+							</div>
+							
+							<hr />
+							<div class="row align-items-center" id="form-result">
+								<div class="col">
+									<div class="card card-success">
+										<div class="card-heading">
+											<h2 class="form-title">Result</h2>
+										</div>
+										<div class="card-block">
+											<div class="row">
+												<div class="col-md-3" id="amount-elevators">
+													<label for="contact:name">Amount of Elevators</label>
+													<input readonly type="text" class="form-control">
+												</div>
+												<div class="col-md-3" id="unit-price">
+													<label for="contact:name">Unit Price</label>
+													<input readonly type="text" class="form-control">
+												</div>
+												<div class="col-md-3" id="total-price">
+													<label for="contact:phone">Total Price</label>
+													<input readonly type="number" class="form-control"> 
+												</div>
+												<div class="col-md-3" id="installation fees">
+													<label for="contact:name">Installation fees</label>
+													<input readonly type="number" class="form-control">
+												</div>
+											</div>
+												<div class="row">
+													<div class="col-md-8" id="final-price">
+														<label for="contact:name">Final Price</label>
+														<input readonly type="text" class="form-control">
+													</div>
+												</div>			
+											</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+								
+						
 			</section>
-			<!-- /CONTACT -->
 
+			
 
 
 
@@ -336,13 +433,9 @@
 									</span>
 								</div>
 							</form>
-							<!-- /Newsletter Form -->
-
-
 						</div>
-						<!-- /col #2 -->
-
-					</div>
+						
+				</div>
 
 
 				</div>
@@ -397,10 +490,66 @@
 		-->
 		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
 		<script src="assets/plugins/gmaps.js"></script>
-		<script>
+
+		<script type="text/javascript">
+			$('#options').on('change', function() {
+				showForm(this.value);
+			});
+
+			function calc(){
+				var type = $("#options").val();
+				var plan = $("input[name='radioPlan']:checked").val();
+				var planStan = 756500;
+				var planprem = 1234500;
+				var planExce = 1540000;
+				var total = $(#)
+				switch (type) {
+					case '1':
+					case '2':
+						var comercialElev = $("#commercial-elev input").val();
+						$("#amount-elevators input").val(comercialElev)
+						var total = 
+					case '3':
+					case '4':	
+
+				}
+			}
+
+
+
+
+
+
+			function showForm(type){
+				switch (type) {
+  				case '1':
+					$("#form-residential").css({display:""});
+					$("#form-commercial").css({display:"none"});
+			 		$("#form-corporate").css({display:"none"});
+			 		$("#form-hybrid").css({display:"none"});
+   				 	break;
+ 				case '2':
+					$("#form-residential").css({display:"none"});
+					$("#form-commercial").css({display:""});
+					$("#form-corporate").css({display:"none"});
+					$("#form-hybrid").css({display:"none"});
+ 				 	break;
+				case '3':
+					$("#form-residential").css({display:"none"});
+					$("#form-commercial").css({display:"none"});
+					$("#form-corporate").css({display:""});
+					$("#form-hybrid").css({display:"none"});
+   					break;
+				case '4':	   
+					$("#form-residential").css({display:"none"});
+					$("#form-commercial").css({display:"none"});
+					$("#form-corporate").css({display:"none"});
+					$("#form-hybrid").css({display:""});
+   					break;
+				}
+			}
 
 			
-
 		</script>
 	</body>
 </html>
