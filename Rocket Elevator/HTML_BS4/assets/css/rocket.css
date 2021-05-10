@@ -2,3 +2,22 @@
     color:rgb(103, 103, 230);  
     font-weight:bold;  
 }
+#services h2, #services h3, #news h2, #news h3, #clients h2, #clients h3, #contact h2, #contact h3 {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0;
+    color: #111;
+}
+
+.heading-title{
+
+    font-size 60px; 
+}
+.awards_proj {
+    color: #17a2b8;
+    font-size: 40px;
+}
+
+#awards {
+    padding: 0px 0px 50px 0px;
+}
