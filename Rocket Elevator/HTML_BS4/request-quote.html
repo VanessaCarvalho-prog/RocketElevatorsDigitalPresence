@@ -151,12 +151,12 @@
 							<h3>Send us your project and we will contact you! <strong><em></em></strong></h3>
 
 							
-							<select class="form-select" aria-label="Default select example" id="options">
+							<select class="form-select" onchange="myFunction()" aria-label="Default select example" id="options">
 								<option checked value="1">Residential</option>
 								<option value="2">Commercial</option>
 								<option value="3">Corporate</option>
 								<option value="4">Hybrid</option>
-							  </select>
+							</select>
 						</div>
 					</div>
 
@@ -191,7 +191,7 @@
 								</div>
 							</div>
 
-							<div class="row align-items-center" style="display:none" id="form-commercial">
+							<div class="row align-items-center" id="form-commercial">
 								<div class="col">
 									<div class="card card-success">
 										<div class="card-heading">
@@ -225,7 +225,7 @@
 								</div>
 							</div>
 
-							<div class="row align-items-center" style="display:none" id="form-corporate">
+							<div class="row align-items-center"  id="form-corporate">
 								<div class="col">
 									<div class="card card-success">
 										<div class="card-heading">
@@ -260,7 +260,7 @@
 								</div>
 							</div>
 
-							<div class="row align-items-center" style="display:none" id="form-hybrid">
+							<div class="row align-items-center"  id="form-hybrid">
 								<div class="col">
 									<div class="card card-success">
 										<div class="card-heading">
@@ -452,64 +452,8 @@
 		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
 		<script src="assets/plugins/gmaps.js"></script>
 
-		<script type="text/javascript">
-			$('#options').on('change', function() {
-				showForm(this.value);
-			});
 
-			function calc(){
-				var type = $("#options").val();
-				var plan = $("input[name='radioPlan']:checked").val();
-				var planStan = 756500;
-				var planprem = 1234500;
-				var planExce = 1540000;
-				
-				switch (type) {
-					case '1':
-					case '2':
-						var comercialElev = $("#commercial-elev input").val();
-						$("#amount-elevators input").val(comercialElev)
-						case '3':
-					case '4':	
+		<script src="rocket.js"></script>
 
-				}
-			}
-
-
-
-
-
-
-			function showForm(type){
-				switch (type) {
-  				case '1':
-					$("#form-residential").css({display:""});
-					$("#form-commercial").css({display:"none"});
-			 		$("#form-corporate").css({display:"none"});
-			 		$("#form-hybrid").css({display:"none"});
-   				 	break;
- 				case '2':
-					$("#form-residential").css({display:"none"});
-					$("#form-commercial").css({display:""});
-					$("#form-corporate").css({display:"none"});
-					$("#form-hybrid").css({display:"none"});
- 				 	break;
-				case '3':
-					$("#form-residential").css({display:"none"});
-					$("#form-commercial").css({display:"none"});
-					$("#form-corporate").css({display:""});
-					$("#form-hybrid").css({display:"none"});
-   					break;
-				case '4':	   
-					$("#form-residential").css({display:"none"});
-					$("#form-commercial").css({display:"none"});
-					$("#form-corporate").css({display:"none"});
-					$("#form-hybrid").css({display:""});
-   					break;
-				}
-			}
-
-			
-		</script>
 	</body>
 </html>

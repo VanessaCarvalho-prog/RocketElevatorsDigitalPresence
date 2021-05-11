@@ -10,7 +10,6 @@
 }
 
 .heading-title{
-
     font-size 60px; 
 }
 .awards_proj {
@@ -20,4 +19,9 @@
 
 #awards {
     padding: 0px 0px 50px 0px;
+}
+.subtext{
+    color: #111;
+    font-weight: 900;
+
 }
