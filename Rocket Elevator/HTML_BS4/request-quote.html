@@ -26,7 +26,7 @@
 
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 	
 		<link href="assets/css/rocket.css" rel="stylesheet" type="text/css" />
 	
@@ -191,11 +191,11 @@
 								</div>
 							</div>
 
-							<div class="row align-items-center" id="form-commercial">
+							<div class="row align-items-center" style="display:none" id="form-commercial">
 								<div class="col">
 									<div class="card card-success">
-										<div class="card-heading">
-											<h2 class="form-title">Commercial</h2>
+										<div class="card-heading" >
+											<h2 class="form-title" >Commercial</h2>
 										</div>
 										<div class="card-block">
 											<div class="row">
@@ -217,7 +217,7 @@
 												</div>
 												<div class="col-md-4" id="commercial-elev">
 													<label for="contact:name">Elevator cages to be deployed</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name]">
+													<input onchange="calculate()" id="calc-com-el" required type="number" min="0" value="0" class="form-control" name="contact[business name]">
 												</div>
 											</div>
 										</div>
@@ -225,7 +225,7 @@
 								</div>
 							</div>
 
-							<div class="row align-items-center"  id="form-corporate">
+							<div class="row align-items-center"  style="display:none" id="form-corporate">
 								<div class="col">
 									<div class="card card-success">
 										<div class="card-heading">
@@ -260,7 +260,7 @@
 								</div>
 							</div>
 
-							<div class="row align-items-center"  id="form-hybrid">
+							<div class="row align-items-center" style="display:none" id="form-hybrid">
 								<div class="col">
 									<div class="card card-success">
 										<div class="card-heading">
@@ -300,15 +300,15 @@
 							<hr />
 							
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="radioPlan" id="inlineRadio1" value="1">
+								<input class="form-check-input" onchange="calculate()" checked type="radio" name="radioPlan" id="inlineRadio1" value="1">
 								<label class="form-check-label" for="inlineRadio1">Standard</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="radioPlan" id="inlineRadio2" value="2">
+								<input class="form-check-input" onchange="calculate()" type="radio" name="radioPlan" id="inlineRadio2" value="2">
 								<label class="form-check-label" for="inlineRadio2">Premium</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="radioPlan" id="inlineRadio3" value="3">
+								<input class="form-check-input" onchange="calculate()" type="radio" name="radioPlan" id="inlineRadio3" value="3">
 								<label class="form-check-label" for="inlineRadio3">Excelium</label>
 							</div>
 							
@@ -323,25 +323,25 @@
 											<div class="row">
 												<div class="col-md-3" id="amount-elevators">
 													<label for="contact:name">Amount of Elevators</label>
-													<input readonly type="text" class="form-control">
+													<input readonly id="calc-amount-elevators" type="text" class="form-control">
 												</div>
 												<div class="col-md-3" id="unit-price">
 													<label for="contact:name">Unit Price</label>
-													<input readonly type="text" class="form-control">
+													<input readonly id="calc-unit-price" type="text" class="form-control">
 												</div>
 												<div class="col-md-3" id="total-price">
 													<label for="contact:phone">Total Price</label>
-													<input readonly type="number" class="form-control"> 
+													<input readonly id="calc-total-price" type="number" class="form-control"> 
 												</div>
-												<div class="col-md-3" id="installation fees">
+												<div class="col-md-3" id="installation-fees">
 													<label for="contact:name">Installation fees</label>
-													<input readonly type="number" class="form-control">
+													<input readonly id="calc-installation-fees" type="number" class="form-control">
 												</div>
 											</div>
 												<div class="row">
 													<div class="col-md-8" id="final-price">
 														<label for="contact:name">Final Price</label>
-														<input readonly type="text" class="form-control">
+														<input readonly id="calc-final-price" type="text" class="form-control">
 													</div>
 												</div>			
 											</div>
@@ -350,13 +350,11 @@
 							</div>
 						</fieldset>
 					</form>
-								
+				
+					
+					
 						
 			</section>
-
-			
-
-
 
 			<!-- FOOTER -->
 			<footer id="footer">
@@ -372,7 +370,7 @@
 
 							<!-- Small Description -->
 							<p>
-								We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
+								Our goal is to offer unparalleled value to our customers. For this, we add quality and performance to all the projects where we are present. We do our best today and are prepared to do much more in the future.
 							</p>
 							<h2>(418) 555-1234</h2>
 						</div>
@@ -390,7 +388,7 @@
 									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
 									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
+										<button class="btn btn-blue" type="submit">Subscribe</button>
 									</span>
 								</div>
 							</form>

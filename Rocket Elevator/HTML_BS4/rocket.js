@@ -27,3 +27,31 @@ function myFunction() {
     }
 
 }
+// Commercial
+function calculate() {
+    var plan = document.querySelector('input[name="radioPlan"]:checked').value;
+    var unitPrice;
+    var percent;
+    if (plan == "1") {
+       unitPrice = 756500;
+       percent = 0.1
+    }else if (plan == "2") {
+        unitPrice = 1234500;
+        percent = 0.13;
+    }else{
+        unitPrice = 1540000;
+        percent = 0.16;
+    }
+
+    var elevators = document.getElementById("calc-com-el").value;
+    var totalPrice = parseInt(unitPrice)*parseInt(elevators);   
+    var fees = totalPrice * percent;
+    var finalPrice = totalPrice + fees;
+
+
+    document.getElementById("calc-amount-elevators").value = elevators;
+    document.getElementById("calc-unit-price").value = unitPrice;
+    document.getElementById("calc-total-price").value = totalPrice;
+    document.getElementById("calc-installation-fees").value = fees;
+    document.getElementById("calc-final-price").value = finalPrice;
+}
