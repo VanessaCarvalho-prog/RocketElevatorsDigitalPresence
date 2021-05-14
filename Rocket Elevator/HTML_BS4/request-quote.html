@@ -174,16 +174,16 @@
 										<div class="card-block">
 											<div class="row">
 												<div class="col-md-4" id="residential-app">
-													<label for="contact:name">Apartments in the building</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+													<label for="contact:name">Appartments in the building</label>
+													<input onchange="calculate()" id="calc-residential-app" type="number" min="0" value="0" class="form-control" name="contact[name][required]">
 												</div>
 												<div class="col-md-4" id="residential-floor">
 													<label for="contact:name">Floors contained in the building</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+													<input onchange="calculate()" id="calc-residential-floor" type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
 												</div>
 												<div class="col-md-4" id="residential-bas">
 													<label for="contact:phone">Basements contained in the building</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[phone]">
+													<input onchange="calculate()" type="number" id="calc-residential-bas" min="0" value="0" class="form-control" name="contact[phone]">
 												</div>
 											</div>
 										</div>
@@ -201,19 +201,19 @@
 											<div class="row">
 												<div class="col-md-4" id="commercial-dist">
 													<label for="contact:name">Distinct businesses</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+													<input onchange="calculate()" required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
 												</div>
 												<div class="col-md-4" id="commercial-floors">
 													<label for="contact:name">Floors contained in the building</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+													<input onchange="calculate()" type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
 												</div>
 												<div class="col-md-4" id="commercial-bas">
 													<label for="contact:phone">Basements contained in the building</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[phone]">
+													<input onchange="calculate()" type="number" min="0" value="0" class="form-control" name="contact[phone]">
 												</div>
 												<div class="col-md-4" id="commercial-park">
 													<label for="contact:name">Parking space available</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name]">
+													<input onchange="calculate()" type="number" min="0" value="0" class="form-control" name="contact[business name]">
 												</div>
 												<div class="col-md-4" id="commercial-elev">
 													<label for="contact:name">Elevator cages to be deployed</label>
@@ -234,25 +234,24 @@
 										<div class="card-block">
 											<div class="row">
 												<div class="col-md-4" id="corporate-sep">
-													<label for="contact:name">Separate tenant companies
-													</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+													<label for="contact:name">Separate tenant companies	</label>
+													<input type="number" onchange="calculate()" id="calc-corporate-sep" min="0" value="0" class="form-control" name="contact[name][required]">
 												</div>
 												<div class="col-md-4" id="corporate-floors">
 													<label for="contact:name">Floors contained in the building</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[business name]">
+													<input type="number" onchange="calculate()" id="calc-corporate-floors" min="0" value="0" class="form-control" name="contact[business name]">
 												</div>
 												<div class="col-md-4" id="corporate-bas">
 													<label for="contact:phone">Basements contained in the building</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[phone]">
+													<input type="number" onchange="calculate()" id="calc-corporate-bas" min="0" value="0" class="form-control" name="contact[phone]">
 												</div>
 												<div class="col-md-4" id="corporate-park">
 													<label for="contact:name">Parking spaces available</label>
-													<input  type="number" min="0" value="0" class="form-control" name="contact[business name]">
+													<input  type="number" onchange="calculate()" id="cal-corporate-park" min="0" value="0" class="form-control" name="contact[business name]">
 												</div>
 												<div class="col-md-4" id="corporate-occ">
 													<label for="contact:name">The maximum number of occupants per floor</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[business name]">
+													<input type="number" onchange="calculate()" id="calc-corporate-occ" min="0" value="0" class="form-control" name="contact[business name]">
 												</div>
 											</div>
 										</div>
@@ -270,27 +269,27 @@
 											<div class="row">
 												<div class="col-md-4" id="hybrid-dist">
 													<label for="contact:name">Distinct businesses</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[name][required]">
+													<input onchange="calculate()" id="calc-hybrid-dist"type="number" min="0" value="0" class="form-control" name="contact[name][required]">
 												</div>
 												<div class="col-md-4" id="hybrid-floors">
 													<label for="contact:name">floors contained in the building, excluding basements</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+													<input  onchange="calculate()" id="calc-hybrid-floors" type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
 												</div>
 												<div class="col-md-4" id="hybrid-bas">
 													<label for="contact:phone">basements contained in the building</label>
-													<input type="number" min="0" value="0" class="form-control" name="contact[phone]" id="contact:phone">
+													<input onchange="calculate()" id="calc-hybrid-bas" type="number" min="0" value="0" class="form-control" name="contact[phone]" id="contact:phone">
 												</div>
 												<div class="col-md-4" id="hybrid-park">
 													<label for="contact:name"> Parking spaces available</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+													<input onchange="calculate()" id="calc-hybrid-park" type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
 												</div>
 												<div class="col-md-4"  id="hybrid-max">
 													<label for="contact:name">Maximum number of occupants per floor</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+													<input onchange="calculate()" id="calc-hybrid-max" type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
 												</div>
 												<div class="col-md-4" id="hybrid-number">
 													<label for="contact:name">Number of hours of activity of the building</label>
-													<input required type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
+													<input onchange="calculate()" id="calc-hybrid-number" type="number" min="0" value="0" class="form-control" name="contact[business name][required]">
 												</div>
 											</div>
 										</div>
@@ -331,11 +330,11 @@
 												</div>
 												<div class="col-md-3" id="total-price">
 													<label for="contact:phone">Total Price</label>
-													<input readonly id="calc-total-price" type="number" class="form-control"> 
+													<input readonly id="calc-total-price" type="text" class="form-control"> 
 												</div>
 												<div class="col-md-3" id="installation-fees">
 													<label for="contact:name">Installation fees</label>
-													<input readonly id="calc-installation-fees" type="number" class="form-control">
+													<input readonly id="calc-installation-fees" type="text" class="form-control">
 												</div>
 											</div>
 												<div class="row">
