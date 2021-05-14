@@ -87,8 +87,6 @@ function calculate() {
 
       var numTotalElevators = parseInt(numElevColum) * parseInt(numColum);
 
-      document.getElementById("calc-amount-elevators").value = numTotalElevators;
-
       finaleCalculate(numTotalElevators, unitPrice, percent);
         
 
@@ -106,7 +104,6 @@ function calculate() {
 
       var numTotalElevators = parseInt(numElevColum) * parseInt(numColum);
 
-      document.getElementById("calc-amount-elevators").value = numTotalElevators;
       finaleCalculate(numTotalElevators, unitPrice, percent);
       
 
@@ -144,7 +141,7 @@ function calculate() {
       var finalPrice = totalPrice + fees;
   
   
-      document.getElementById("calc-amount-elevators").value = numTotalElevators;
+      document.getElementById("calc-amount-elevators").value = numTotalElevators || 0;
       document.getElementById("calc-unit-price").value = transformers(unitPrice);
       document.getElementById("calc-total-price").value = transformers(totalPrice);
       document.getElementById("calc-installation-fees").value = transformers(fees);
@@ -153,14 +150,15 @@ function calculate() {
     
 
     function transformers(number) {
-      var numberString = number.toString()
+        var numNan = number || 0;
+      var numberString = numNan.toString()
       var numberCents = numberString.slice(-2)
       var numberDolar = numberString.slice(0, numberString.length-2)
       return  + numberDolar + "," + numberCents + " $";
     }
 
 
-      
+
 
 
 

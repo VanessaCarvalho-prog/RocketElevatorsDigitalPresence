@@ -25,3 +25,11 @@
     font-weight: 900;
 
 }
+.title h2 {
+    color:rgb(103, 103, 230);  
+    font-weight:bold;  
+}
+
+.margin {
+    margin-left: 500px;
+}
